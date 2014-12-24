@@ -1,0 +1,18 @@
+set -o vi
+case `uname -s` in
+    Linux)
+      XHOST="\e[0;91m\h\e[0m"
+      ;;
+    Darwin)
+      XHOST="\h"
+      ;;
+    *)
+      XHOST="\e[0;91m\e[40m\h\e[0m"
+      ;;
+esac
+export PS1="\[\e[01;31m\](\$?) $XHOST \[\e[01;31m\]\t\[\e[01;34m\] \w\n$\[\033[00m\] "
+alias gen-rand='perl -le '\''print map{((a..z,A..Z,0..9),split(//,"@$%&.:" x 2))[rand 74]} 0..(20+rand 8)'\'''
+alias newdir='export NEWDIR=temp-`date +%Y%m%d-%H%M%S`; echo $NEWDIR; mkdir $NEWDIR; cd $NEWDIR'
+alias newtemp="cd $TEMP && newdir"
+alias unix2dos="perl -pi -e 's/\n/\r\n/'"
+alias dos2unix="perl -pi -e 's/\r\n/\n/'"
