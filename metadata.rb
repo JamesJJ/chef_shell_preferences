@@ -1,4 +1,4 @@
-name             'shell_preferences''
+name             'shell_preferences'
 maintainer       'github@jamesjj.net'
 maintainer_email 'github@jamesjj.net'
 license          'MIT'
