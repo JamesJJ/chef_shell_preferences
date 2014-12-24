@@ -7,7 +7,7 @@ package "vim-enhanced" do
 end
 
 node['shell_preferences']['user_files'].each do |_file|
-  template File.join('~',_file) do
+  template File.join(ENV['HOME'],_file) do
     source "#{_file}.erb"
     mode '0644'
     owner node['current_user']
