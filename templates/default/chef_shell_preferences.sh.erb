@@ -16,3 +16,11 @@ alias newdir='export NEWDIR=temp-`date +%Y%m%d-%H%M%S`; echo $NEWDIR; mkdir $NEW
 alias newtemp="cd $TEMP && newdir"
 alias unix2dos="perl -pi -e 's/\n/\r\n/'"
 alias dos2unix="perl -pi -e 's/\r\n/\n/'"
+
+if [ -n "$BASH_VERSION" -o -n "$KSH_VERSION" -o -n "$ZSH_VERSION" ]; then
+  [ -x /usr/bin/id ] || return
+  ID=`/usr/bin/id -u`
+  [ -n "$ID" -a "$ID" -le 200 -a "$ID" -gt 0 ] && return
+  # for bash and zsh, only if no alias is already set
+  alias vi >/dev/null 2>&1 || alias vi=vim
+fi
