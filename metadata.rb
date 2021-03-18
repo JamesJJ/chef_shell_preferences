@@ -1,6 +1,6 @@
 name             'shell_preferences'
-maintainer       'github@jamesjj.net'
-maintainer_email 'github@jamesjj.net'
+maintainer       'JamesJJ'
+maintainer_email 'JamesJJ@users.noreply.github.com'
 license          'MIT'
 description      'Installs/Configures VIM and bash profile'
 long_description      'Installs/Configures VIM and bash profile'
